@@ -71,7 +71,7 @@
     ?>
 
 
-</body>
+
 
 <footer>
 <div>
@@ -81,4 +81,5 @@
 	<p id="contact" >Any enquiries please email the <a href="mailto:something@something.com">manager</a></p>
 </footer>
 
+</body>
 </html>
