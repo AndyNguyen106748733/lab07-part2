@@ -5,23 +5,41 @@
     <meta name="Author" content="Andy Nguyen">
     <meta name="keywords" content="PHP">
     <meta name="description" content="A PHP page to confirm booking details">
-    <title>Booking Confirmation</title>
+    <title>Booking Confirmatio</title>
 </head>
 
 <body>
-    <h1>Rohirrim Tour Booking Confirmation</h1>
+    <h1>Rohirrim Tour Booking Confirmationa</h1>
     <?php
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (isset($_POST["firstname"])) {
+        if (isset($_POST["firstname"]) and isset($_POST["lastname"])) {
             $firstName = htmlspecialchars($_POST["firstname"]);
-            echo "<p> First name for booking: $firstName </p>";
+            $lastName = htmlspecialchars($_POST["lastname"]);
+            echo "<p> Welcome $firstName $lastName !</p>";
         }
 
-        if (isset($_POST["lastname"])) {
-            $lastName = htmlspecialchars($_POST["lastname"]);
-            echo "<p> Last name for booking: $lastName </p>";
+         if (isset($_POST["accom"])) {
+           $dayFour = false;
+           $dayTen = false;
+             if (isset($_POST["4day"])) {
+                $tour = htmlspecialchars($_POST["4day"]);
+                $dayFour = true;
+            }
+
+            if (isset($_POST["10day"])) {
+                $tour = htmlspecialchars($_POST["10day"]);
+                $dayTen = true;
+            }
+
+            if ($dayFour and $dayTen) {
+                echo "You are now booked on the Four-day tour and the Ten-day tour!";
+            } elseif ($dayFour) {
+                echo "You are now booked on the Four-day!!";
+            } elseif ($dayTen) {
+                echo "You are now booked on the Ten-day tour!";
+            }
         }
 
         if (isset($_POST["age"])) {
@@ -34,20 +52,7 @@
             echo "<p> Species for booking: $species </p>";
         }
 
-        if (isset($_POST["accom"])) {
-            $accom = htmlspecialchars($_POST["accom"]);
-            echo "<p> Accommodation for booking: $accom</p>";
-        }
-
-        if (isset($_POST["4day"])) {
-            $tour = htmlspecialchars($_POST["4day"]);
-            echo "<p> Selected 4 day tour</p>";
-        }
-
-        if (isset($_POST["10day"])) {
-            $tour = htmlspecialchars($_POST["10day"]);
-            echo "<p> Selected 10 day tour</p>";
-        }
+       
 
         if (isset($_POST["food"])) {
             $Food = htmlspecialchars($_POST["food"]);
