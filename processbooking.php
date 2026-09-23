@@ -42,31 +42,26 @@
             }
         }
 
+
+         if (isset($_POST["species"])) {
+            $species = htmlspecialchars($_POST["species"]);
+            echo "<p> Species: $species </p>";
+        }
+
         if (isset($_POST["age"])) {
             $age = htmlspecialchars($_POST["age"]);
-            echo "<p> Age for booking: $age </p>";
+            echo "<p> Age: $age </p>";
         }
 
-        if (isset($_POST["species"])) {
-            $species = htmlspecialchars($_POST["species"]);
-            echo "<p> Species for booking: $species </p>";
-        }
-
-       
 
         if (isset($_POST["food"])) {
             $Food = htmlspecialchars($_POST["food"]);
-            echo "<p> Selected: $Food</p>";
-        }
-
-        if (isset($_POST["bookday"])) {
-            $bookDay = htmlspecialchars($_POST["bookday"]);
-            echo "<p> Selected booking day: $bookDay</p>";
+            echo "<p> Meal Preference: $Food</p>";
         }
 
          if (isset($_POST["partysize"])) {
             $partySize = htmlspecialchars($_POST["partysize"]);
-            echo "<p> Party size: $partySize</p>";
+            echo "<p> Number of travellers: $partySize</p>";
         }
 
     } else {
